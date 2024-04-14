@@ -438,6 +438,9 @@ footer {
   /* Styles for screens up to 768px (mobile devices) */
 
   /* Header and Navigation */
+  .content-container {
+    margin-top: -40px;
+  }
 
   .nav-links {
     display: none;
@@ -489,7 +492,10 @@ footer {
   }
 
   .hero {
-    height: 200px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    
     /* Adjust the height for mobile devices */
   }
 
@@ -528,7 +534,7 @@ footer {
 
   /* About Section */
   .about {
-    width: 90%;
+    width: 100%;
     /* Set a width for the about section */
     margin: 40px auto;
     /* Adjust the margin */
@@ -546,7 +552,7 @@ footer {
   }
 
   .about-text {
-    font-size: 4vw;
+    font-size: 5vw;
     width: 100%;
     /* Set a width for the text content */
     margin-bottom: 20px;
@@ -580,6 +586,7 @@ footer {
   .copyright {
     font-size: 4vw;
     margin-right: 0;
+    
   }
 
 }
