@@ -1,0 +1,588 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: #000;
+  font-family: "Times New Roman", sans-serif;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+}
+
+.line {
+  position: absolute;
+  width: 1px;
+  height: 100vh;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  -webkit-animation: drop 7s 0s infinite;
+  animation: drop 7s 0s infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1) {
+  margin-left: -25%;
+}
+
+.line:nth-child(1)::after {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.line:nth-child(3) {
+  margin-left: 25%;
+}
+
+.line:nth-child(3)::after {
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    top: -50%;
+  }
+
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+
+  100% {
+    top: 110%;
+  }
+}
+
+.content-container {
+  position: relative;
+  top: 100px;
+  height: 100vh;
+  overflow: auto;
+  min-height: calc(100vh - 0px - 120px); /* Adjust heights as needed */
+  padding-top: 0px; /* Adjust according to your header height */
+  padding-bottom: 0px; /* Adjust according to your footer height */
+  box-sizing: border-box;
+
+}
+
+
+h1,
+h2,
+h3,
+p {
+  color: #ffffff;
+}
+
+/* Variables */
+:root {
+  --primary-color: #ff6347;
+  --secondary-color: #e65c4c;
+  --dark-color: #333;
+  --light-color: #fff;
+}
+
+
+/* Header Styles */
+header {
+  background-color: rgb(0, 0, 0);
+  color: var(--light-color);
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.logo img {
+  max-width: 100px;
+
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+  filter: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+
+  margin-left: auto;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: var(--light-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 30px;
+  padding-inline-start: 20px;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+
+}
+
+
+/* ... rest of the styles ... */
+.register-btn {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+
+
+hr.hr {
+  border-bottom: white solid 2px;
+  max-width: auto;
+}
+
+/* Main Content Styles */
+main {
+  max-width: 1500px;
+  margin: 120px auto 0;
+  padding: 40px;
+}
+
+.hero {
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-color);
+  text-align: center;
+  margin: 60px auto ;
+  margin-top: auto;
+}
+
+
+.hero-text {
+  font-size: 29cap;
+  letter-spacing: 0.15cap;
+  margin-bottom: 20px;
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Style for countdown section */
+.countdown {
+  text-align: center;
+  margin: 80px auto;
+  background-position: center;
+}
+
+/* Style for heading */
+.countdown h1 {
+  font-size: 8cap;
+  margin-bottom: 10px;
+}
+
+/* Style for subheading */
+.countdown h2 {
+  font-size: 4cap;
+  margin-bottom: 20px;
+}
+
+/* Style for countdown items */
+.countdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+  font-size: 25px;
+}
+
+.countdown ul li {
+  margin: 0 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.countdown ul li span {
+  display: inline-block;
+  font-size: 50px;
+  font-weight: bolder;
+  padding: 10px;
+  color: var(--primary-color);
+  border-radius: 5px;
+}
+
+/* Style for register button */
+.register-btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #000;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-size: 25px;
+  font-weight: bolder;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.register-btn:hover {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
+  /* Adding border color */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/*-- About Section Styles */
+
+.about {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.section-title {
+  font-size: 5cap;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.about-content {
+  display: flex;
+  /* Updated display property */
+  flex-direction: row;
+  /* Updated flex direction for the first div */
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.about-content:nth-child(2) {
+  display: flex;
+  /* Updated display property for the second div */
+  flex-direction: row;
+  /* Updated flex direction for the second div */
+}
+
+.about-img {
+  width: auto;
+  height: auto;
+  margin-right: 20px;
+}
+
+
+.about-text {
+
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 1.6;
+  width: auto;
+  height: auto;
+  /* Background color for the text content */
+  padding: 20px;
+  /* Padding to create space around the text content */
+  border-radius: 8px;
+  /* Rounded corners for the box */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Shadow effect for the box */
+}
+
+
+/* Events Grid Styles */
+
+
+/* Footer Styles */
+footer {
+  background-color: #000;
+  color: var(--light-color);
+  padding: auto 0;
+  width: 100%;
+  box-sizing: border-box;
+  /* Assuming your footer height is 120px */
+  height: 180px;
+}
+
+.footer-content {
+  color: var(--light-color);
+  max-width: 1500px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.social-links a {
+  color: var(--light-color);
+  margin: 0 50px;
+  font-size: 30px;
+  transition: color 0.3s ease;
+  display: flex-item;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+/* Responsive Styles */
+
+
+@media (max-width: 768px) {
+  /* Styles for screens up to 768px (mobile devices) */
+
+  /* Header and Navigation */
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    transition: transform 0.3s ease-in-out;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .menu-toggle.open {
+    transform: rotate(90deg);
+  }
+
+  nav ul.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .menu-toggle.show {
+    background-color: #000;
+    color: #fff;
+  }
+
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .logo img {
+    max-width: 80px;
+  }
+
+
+  /* Hero Section */
+  .hero-text {
+    font-size: 15vw;
+    /* Adjust font size based on viewport width */
+  }
+
+  .hero {
+    height: 200px;
+    /* Adjust the height for mobile devices */
+  }
+
+  /* Countdown Section */
+  .countdown {
+    width: 90%;
+    /* Set a width for the countdown section */
+    margin: 40px auto;
+    /* Adjust the margin */
+  }
+
+  .countdown h1 {
+    font-size: 6vw;
+  }
+
+  .countdown h2 {
+    font-size: 4vw;
+  }
+
+  .countdown ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .countdown ul li {
+    margin: 10px;
+  }
+
+  .countdown ul li span {
+    font-size: 6vw;
+  }
+
+  .register-btn {
+    font-size: 4vw;
+  }
+
+  /* About Section */
+  .about {
+    width: 90%;
+    /* Set a width for the about section */
+    margin: 40px auto;
+    /* Adjust the margin */
+  }
+
+
+  .section-title {
+    font-size: 7vw;
+  }
+
+  .about-content {
+
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-text {
+    font-size: 4vw;
+    width: 100%;
+    /* Set a width for the text content */
+    margin-bottom: 20px;
+  }
+
+  .about-img {
+    width: 100%;
+    /* Set a width for the image */
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+
+  }
+
+
+  /* Footer */
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-links {
+    margin-bottom: 20px;
+  }
+
+  .social-links a {
+    margin: 0 20px;
+  }
+
+  .copyright {
+    font-size: 4vw;
+    margin-right: 0;
+  }
+
+}
+
+
+/* Animation Styles */
